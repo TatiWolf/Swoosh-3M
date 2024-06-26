@@ -1,11 +1,39 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 export interface ICars {
   image: string,
   type: string,
   country: string,
+  imageTitle?: string,
   name: string,
-  description: string
+  description: string,
+  subTitle?: string,
+  important?: {
+    title: string,
+    subtitle: string
+  }[],
+  title2?: {
+    name: string,
+    subtitle: string,
+    title2: string,
+    subtitle2: string,
+    img: string
+  },
+  block2?: {
+    title1: string,
+    subtitle1: string[],
+    title2: string,
+    subtitle2: string,
+  },
+  block3?: {
+    image: string,
+    title: string,
+    subtitle: {
+      text1: string,
+      info: string[],
+      footer: string
+    },
+  }
 }
 
 @Injectable({
@@ -15,51 +43,109 @@ export class CarsService {
 
   categories: string[] = ['Новинки', 'Легенды', 'Классика', 'Германия', 'Китай', 'Россия', 'Япония', 'Другие страны']
 
- cars: ICars[] = [
-  {
-    image: 'assets/img/img7.jpg',
-    type: 'Новинки',
-    country: 'Китай',
-    name: 'Geely Monjaro',
-    description: 'кроссовер из китая'
-  },
-  {
-    image: 'assets/img/img8.jpg',
-    type: 'Классика',
-    country: 'Япония',
-    name: 'Toyota RAV4',
-    description: '2013-2019'
-  },
-  {
-    image: 'assets/img/img9.jpg',
-    type: 'Классика',
-    country: 'Другие страны',
-    name: 'Hyundai Solaris',
-    description: 'знакомый седан'
-  },
-  {
-    image: 'assets/img/img10.jpg',
-    type: 'Новинки',
-    country: 'Другие страны',
-    name: 'Volvo XC90',
-    description: 'гибридный кроссовер'
-  },
-  {
-    image: 'assets/img/img25.jpeg',
-    type: 'Легенды',
-    country: 'Германия',
-    name: 'Mercedes-Benz W124',
-    description: 'мечта и легенда 90-х'
-  },
-  {
-    image: 'assets/img/img26.jpeg',
-    type: 'Классика',
-    country: 'Япония',
-    name: 'Toyota Camry',
-    description: 'нестареющая классика'
-  },
-]
-
+  cars: ICars[] = [
+    {
+      image: 'assets/img/img7.jpg',
+      imageTitle: 'assets/img/img_2.png',
+      type: 'Новинки',
+      country: 'Китай',
+      name: 'Geely Monjaro',
+      description: 'кроссовер из китая',
+      subTitle: 'В этом обзоре мы рассмотрим ключевые особенности Geely Monjaro, его преимущества и недостатки, а также его конкурентоспособность на рынке.',
+      important: [
+        {
+          title: 'Основные характеристики ',
+          subtitle: '- Бензиновые двигатели объёмом 1.5 и 2.0 литра\n' +
+            '- Мощность от 150 до 240 л.с.\n' +
+            '- Гибридные версии с повышенной экономичностью\n' +
+            '- Полный привод (в некоторых комплектациях)'
+        },
+        {
+          title: 'Ключевые технологии',
+          subtitle: '- Система экстренного торможения\n' +
+            '- Контроль за полосой движения\n' +
+            '- Камеры кругового обзора\n' +
+            '- Датчики слепых зон\n' +
+            '- Автоматическое переключение дальнего света\n'
+        },
+        {
+          title: 'Особенности экстерьера',
+          subtitle: '- Светодиодные фары и задние фонари\n' +
+            '- Большие легкосплавные диски\n' +
+            '- Хромированные элементы отделки\n' +
+            '- Панорамная крыша (в некоторых комплектациях)\n'
+        },
+      ],
+      title2: {
+        name: 'О машине',
+        subtitle: 'Geely Monjaro — один из новейших кроссоверов от китайского автопроизводителя Geely. Этот автомобиль уже успел привлечь внимание автолюбителей благодаря сочетанию стильного дизайна, передовых технологий и доступной цены. В этом обзоре мы рассмотрим ключевые особенности Geely Monjaro, его преимущества и недостатки, а также его конкурентоспособность на рынке.\n' +
+          '\n' +
+          'Он оснащён множеством современных технологий, направленных на повышение комфорта и безопасности. Среди них можно выделить адаптивный круиз-контроль, системы помощи при парковке, а также множество других ассистентов водителя.',
+        title2: 'Двигатели и производительность',
+        subtitle2: 'Geely Monjaro предлагается с несколькими вариантами двигателей, включая как бензиновые, так и гибридные версии. Они обеспечивают хорошую динамику и экономичность, что делает автомобиль подходящим как для городской, так и для загородной езды.',
+        img: 'assets/img/img.png'
+      },
+      block2: {
+        title1: 'Интерьер и комфорт',
+        subtitle1: [
+          '- Кожаные сиденья с подогревом и вентиляцией',
+          '  - Информационно-развлекательная система с большим сенсорным экраном',
+          '  - Цифровая панель приборов',
+          '  - Многофункциональное рулевое колесо',
+          '  - Качественная аудиосистема'],
+        title2: 'Цена и конкуренты',
+        subtitle2: 'Одним из ключевых преимуществ Geely Monjaro является его конкурентоспособная цена. На рынке он соревнуется с такими моделями, как Toyota RAV4, Hyundai Tucson и Kia Sportage. Благодаря привлекательной стоимости и богатому оснащению, Monjaro имеет все шансы завоевать свою долю рынка.',
+      },
+      block3: {
+        image: 'assets/img/img_1.png',
+        title: 'Заключение',
+        subtitle: {
+          text1: 'Geely Monjaro – это современный китайский кроссовер, который сочетает стиль, передовые технологии и доступную цену. Этот автомобиль предлагает:',
+          info: [
+            '- Просторный салон с качественной отделкой и современными системами климат-контроля и мультимедиа.',
+            '- Передовые системы безопасности и помощи водителю, такие как адаптивный круиз-контроль и система автоматического торможения.',
+            '- Эффективные двигатели с низким расходом топлива.'
+          ],
+          footer: 'Geely Monjaro – отличный выбор для тех, кто ищет современный кроссовер с хорошим соотношением цены и качества.'
+        }
+      }
+    },
+    {
+      image: 'assets/img/img8.jpg',
+      type: 'Классика',
+      country: 'Япония',
+      name: 'Toyota RAV4',
+      description: '2013-2019'
+    },
+    {
+      image: 'assets/img/img9.jpg',
+      type: 'Классика',
+      country: 'Другие страны',
+      name: 'Hyundai Solaris',
+      description: 'знакомый седан'
+    },
+    {
+      image: 'assets/img/img10.jpg',
+      type: 'Новинки',
+      country: 'Другие страны',
+      name: 'Volvo XC90',
+      description: 'гибридный кроссовер'
+    },
+    {
+      image: 'assets/img/img25.jpeg',
+      type: 'Легенды',
+      country: 'Германия',
+      name: 'Mercedes-Benz W124',
+      description: 'мечта и легенда 90-х'
+    },
+    {
+      image: 'assets/img/img26.jpeg',
+      type: 'Классика',
+      country: 'Япония',
+      name: 'Toyota Camry',
+      description: 'нестареющая классика'
+    },
+  ]
 
 
 }

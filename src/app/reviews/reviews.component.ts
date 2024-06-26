@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {CarsService, ICars} from "../../data/cars.service";
 import {BehaviorSubject, filter, map, Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -14,7 +15,8 @@ export class ReviewsComponent {
   categoriesActive: string[] = []
 
   constructor(
-    public carsService: CarsService
+    public carsService: CarsService,
+    private route:Router
   ) {
     this.filteredCars$ = this.cars.asObservable().pipe(
       map(() => this.filterCarsByCountries())
@@ -42,4 +44,8 @@ export class ReviewsComponent {
     this.cars.next(filtered);
   }
 
+  selectCar(car: ICars) {
+    localStorage.setItem('car', JSON.stringify(car))
+    this.route.navigate(['/template-for-cars'])
+  }
 }

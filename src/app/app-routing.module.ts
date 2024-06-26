@@ -8,6 +8,7 @@ import {PersonsComponent} from "./persons/persons.component";
 import {ErrorPageComponent} from "./error-page/error-page.component";
 import {TemplateForLifeHacksComponent} from "./templates/template-for-life-hacks/template-for-life-hacks.component";
 import {TemplateForArticlesComponent} from "./templates/template-for-articles/template-for-articles.component";
+import {TemplateForCarsComponent} from "./templates/template-for-cars/template-for-cars.component";
 
 const routes: Routes = [
   {
@@ -41,6 +42,11 @@ const routes: Routes = [
   {
     path:'template-for-articles',
     component: TemplateForArticlesComponent
+  }
+  ,
+  {
+    path:'template-for-cars',
+    component: TemplateForCarsComponent
   }
 ];
 
