@@ -9,6 +9,9 @@ import { LifeHacksComponent } from './life-hacks/life-hacks.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { PersonsComponent } from './persons/persons.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import {NgOptimizedImage} from "@angular/common";
+import { TemplateForArticlesComponent } from './templates/template-for-articles/template-for-articles.component';
+import { TemplateForLifeHacksComponent } from './templates/template-for-life-hacks/template-for-life-hacks.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     LifeHacksComponent,
     ReviewsComponent,
     PersonsComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    TemplateForArticlesComponent,
+    TemplateForLifeHacksComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,87 +16,27 @@
 <section class="sec-11">
   <div class="wrapper">
     <div class="box">
-      <label class="checkbox-filter">
+      <label class="checkbox-filter" *ngFor="let category of categories">
         <input type="checkbox" name="teg1" class="checkbox-input">
-        <span class="checkbox-content">Спорт</span>
-      </label>
-      <label class="checkbox-filter">
-        <input type="checkbox" name="teg2" class="checkbox-input">
-        <span class="checkbox-content">Ралли</span>
-      </label>
-      <label class="checkbox-filter">
-        <input type="checkbox" name="teg3" class="checkbox-input">
-        <span class="checkbox-content">Гонки</span>
-      </label>
-      <label class="checkbox-filter">
-        <input type="checkbox" name="teg4" class="checkbox-input">
-        <span class="checkbox-content">Изобретатели</span>
-      </label>
-      <label class="checkbox-filter">
-        <input type="checkbox" name="teg5" class="checkbox-input">
-        <span class="checkbox-content">Первопроходцы</span>
-      </label>
-      <label class="checkbox-filter">
-        <input type="checkbox" name="teg6" class="checkbox-input">
-        <span class="checkbox-content">Бизнес</span>
-      </label>
-      <label class="checkbox-filter">
-        <input type="checkbox" name="teg7" class="checkbox-input">
-        <span class="checkbox-content">Блогеры</span>
-      </label>
-      <label class="checkbox-filter">
-        <input type="checkbox" name="teg8" class="checkbox-input">
-        <span class="checkbox-content">Рекордсмены</span>
+        <span class="checkbox-content">{{category}}</span>
       </label>
     </div>
     <div class="box">
-      <div class="item" data-rubric1="teg3" data-rubric2="teg2" data-rubric3="teg1">
-        <a href="#">
-                    <span class="img">
-                        <img src="assets/img/img11.png" alt="">
-                    </span>
+      <div class="item" data-rubric1="teg3" data-rubric2="teg2" data-rubric3="teg1" *ngFor="let person of persons">
+        <a (click)="checkPerson(person)">
+          <span class="img">
+            <img [ngSrc]="person.image" [alt]="person.name" fill>
+          </span>
           <span class="teg">
-                        <span>Гонки</span>
-                        <span>Ралли</span>
-                        <span>Спорт</span>
-                    </span>
+            <span *ngFor="let type of person.type">{{type}}</span>
+          </span>
           <span class="content">
-                        <span class="zag">Мишель Мутон</span>
-                        <span class="text">Самая быстрая женщина в мире</span>
-                    </span>
+            <span class="zag">{{person.name}}</span>
+            <span class="text">{{person.description}}</span>
+          </span>
         </a>
       </div>
-      <div class="item" data-rubric1="teg4" data-rubric2="teg5">
-        <a href="#">
-                    <span class="img">
-                        <img src="assets/img/img28.png" alt="">
-                    </span>
-          <span class="teg">
-                        <span>Изобретатели</span>
-                        <span>Первопроходцы</span>
-                    </span>
-          <span class="content">
-                        <span class="zag">Карл Бенц</span>
-                        <span class="text">изобретатель первого в мире автомобиля с ДВС</span>
-                    </span>
-        </a>
-      </div>
-      <div class="item" data-rubric1="teg3" data-rubric2="teg2" data-rubric3="teg1">
-        <a href="#">
-                    <span class="img">
-                        <img src="assets/img/img29.png" alt="">
-                    </span>
-          <span class="teg">
-                        <span>Гонки</span>
-                        <span>Ралли</span>
-                        <span>Спорт</span>
-                    </span>
-          <span class="content">
-                        <span class="zag">Ильдар АВТО-ПОДБОР</span>
-                        <span class="text">блогер с 5,29 млн Подписчиков</span>
-                    </span>
-        </a>
-      </div>
+
     </div>
   </div>
 </section>

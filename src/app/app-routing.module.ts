@@ -6,6 +6,8 @@ import {LifeHacksComponent} from "./life-hacks/life-hacks.component";
 import {ReviewsComponent} from "./reviews/reviews.component";
 import {PersonsComponent} from "./persons/persons.component";
 import {ErrorPageComponent} from "./error-page/error-page.component";
+import {TemplateForLifeHacksComponent} from "./templates/template-for-life-hacks/template-for-life-hacks.component";
+import {TemplateForArticlesComponent} from "./templates/template-for-articles/template-for-articles.component";
 
 const routes: Routes = [
   {
@@ -18,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'life-hacks',
-    component: LifeHacksComponent
+    component: LifeHacksComponent,
   },
   {
     path: 'reviews',
@@ -32,6 +34,14 @@ const routes: Routes = [
     path: 'error-page',
     component: ErrorPageComponent
   },
+  {
+    path:'template-for-life-hacks',
+    component: TemplateForLifeHacksComponent
+  },
+  {
+    path:'template-for-articles',
+    component: TemplateForArticlesComponent
+  }
 ];
 
 @NgModule({
