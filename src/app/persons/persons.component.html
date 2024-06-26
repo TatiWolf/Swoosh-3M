@@ -1,5 +1,7 @@
+<body class="articles">
 <header>
   <div class="wrapper">
+
     <div class="banner">
       <div class="img">
         <img src="assets/img/img27.jpeg" alt="">
@@ -17,12 +19,12 @@
   <div class="wrapper">
     <div class="box">
       <label class="checkbox-filter" *ngFor="let category of categories">
-        <input type="checkbox" name="teg1" class="checkbox-input">
+        <input type="checkbox" name="teg1" class="checkbox-input" (click)="addToArrayCategories(category)">
         <span class="checkbox-content">{{category}}</span>
       </label>
     </div>
     <div class="box">
-      <div class="item" data-rubric1="teg3" data-rubric2="teg2" data-rubric3="teg1" *ngFor="let person of persons">
+      <div class="item" data-rubric1="teg3" data-rubric2="teg2" data-rubric3="teg1" *ngFor="let person of filteredPersons$ | async">
         <a (click)="checkPerson(person)">
           <span class="img">
             <img [ngSrc]="person.image" [alt]="person.name" fill>

@@ -1,127 +1,101 @@
+
+<body class="article">
 <header>
-  <div class='wrapper' >
-    <div class='banner' >
-      <div class='teg' *ngFor="let tag of (filteredLifeHacks$ | async)?.type" >
-        <a href='#'>{{tag}}</a>
+  <div class="wrapper">
+    <div class="box">
+    </div>
+    <div class="banner">
+      <div class="teg" >
+        <a href="#" *ngFor="let article of lifeHack.type">{{ article }}</a>
       </div>
-      <div class='img'>
-        <img src='../../../assets/img/img17.jpeg' alt=''>
+      <div class="img">
+        <img [src]="lifeHack.image" alt="">
       </div>
-      <div class='box'>
-        <div class='zag'>Заправился не тем топливом: что делать?</div>
-        <div class='text'>
-          <p>Подобная ошибка может возникнуть у каждого из нас, из-за усталости, стресса или невнимательность. Очень
-            важно иметь план действий на такой случай.</p>
-          <a href='#'>поделиться</a>
+      <div class="box">
+        <div class="zag">{{lifeHack.title}}</div>
+        <div class="text">
+          <p>{{lifeHack.subTitle}}</p>
+          <a href="#">поделиться</a>
         </div>
       </div>
     </div>
   </div>
 </header>
-<section class='sec-7'>
-  <div class='wrapper'>
-    <div class='title'>Самое важное</div>
-    <div class='box'>
-      <div class='item'>
-        <div class='num'>01</div>
-        <div class='zag'>Всегда проверяйте как себя, так и сотрудника заправки</div>
-        <div class='text'>Вне зависимости от того, кто отвечает за заправку автомобиля, нужно убедиться, что
-          используется необходимый тип топлива.
-        </div>
-      </div>
-      <div class='item'>
-        <div class='num'>02</div>
-        <div class='zag'>избегайте сомнительных, непроверенных заправок</div>
-        <div class='text'>Старайтесь заправляться у крупных представителей, а если находитесь в путешествии, всегда
-          лично заправляйте свой автомобиль.
-        </div>
-      </div>
-      <div class='item'>
-        <div class='num'>03</div>
-        <div class='zag'>не заводите двигатель автомобиля</div>
-        <div class='text'>Чтобы минимизировать неприятные последствия, если ошибка все-таки произошла, необходимо
-          прекратить эксплуатацию и вызвать эвакуатор.
+<section class="sec-7">
+  <div class="wrapper">
+    <div class="title">Самое важное</div>
+    <div class="box">
+      <div class="item" *ngFor="let important of lifeHack.important">
+        <div class="num">{{ important.number }}</div>
+        <div class="zag">{{ important.title }}</div>
+        <div class="text">{{important.subtitle}}
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class='sec-8'>
-  <div class='wrapper'>
+<section class="sec-8">
+  <div class="wrapper">
     <!-- Начало статьи -->
-    <div class='title'>О топливе</div>
-    <div class='box'>
-      <div class='left'>
-        <div class='zag'>Какое топливо нужно именно вам?</div>
-        <div class='text'>Если вы забыли или не знаете, какое топливо «ест» ваш автомобиль, вы всегда можете посмотреть
-          информацию на внутренней стороне лючка бензобака, что является самым простым вариантом. Так же эти сведения
-          можно найти в руководстве по эксплуатации вашего автомобиля.
+    <div class="title">{{ lifeHack.title2?.name }}</div>
+    <div class="box">
+      <div class="left">
+        <div class="zag">{{ lifeHack.title2?.title }}</div>
+        <div class="text">{{ lifeHack.title2?.subtitle }}
         </div>
-        <div class='zag'>Как обезопасить себя и свой автомобиль?</div>
-        <div class='text'>Даже если вы опытный водитель, мы настоятельно рекомендуем тщательно относиться к выбору
-          заправок, также всегда проверять себя при выборе заправочного пистолета. Злую шутку с вами может сыграть
-          усталость, общее недомогание или состояние стресса, спешки. Однако иногда виноваты и сторонние факторы: так,
-          пистолет может быть вставлен в неправильную ячейку, а сотрудник заправки, будучи человеком, тоже может
-          ошибиться. Путешествующим на машине мы настоятельно рекомендуем всегда заправляться самостоятельно.
+        <div class="zag">{{ lifeHack.title2?.title2 }}</div>
+        <div class="text">{{ lifeHack.title2?.subtitle2 }}
         </div>
       </div>
-      <div class='right'>
-        <img src='../../../assets/img/img18.jpg' alt=''>
+      <div class="right">
+        <img [src]="lifeHack.title2?.img" alt="">
       </div>
     </div>
-    <div class='blockquote'>«Попытка завести двигатель автомобиля после заправки неподходящим топливом может нанести
-      серьезный ущерб двигателю и другим системам»
+    <div class="blockquote">{{lifeHack.text}}
     </div>
-    <div class='title'>Разбор последствий</div>
-    <div class='box'>
-      <div class='left'>
-        <div class='zag'>зачем заправляться самостоятельно?</div>
-        <div class='text'>Если вы сами совершили ошибку, то претензии к заправке вы вряд ли сможете предъявить. В
-          случае, если ошибку совершил заправщик, вы можете потребовать у заправки компенсацию затрат, только не
-          забудьте зафиксировать все доказательства и учтите, что процесс этот долгий.
+    <div class="title">{{ lifeHack.title3?.name }}</div>
+    <div class="box">
+      <div class="left">
+        <div class="zag">{{ lifeHack.title3?.title }}</div>
+        <div class="text">{{ lifeHack.title3?.subtitle }}
         </div>
-        <div class='zag'>что делать, если заправились не тем топливом?</div>
-        <div class='text'>Самое главное в такой ситуации: не паниковать! Если вы заправились топливом с более высоким
-          октановым числом, например, вместо 95 залили 98, ничего страшного не случится, вы можете продолжать движение.
-          Но если же вы залили топливо с более низким числом или перепутали бензин и дизель, то необходимо действовать
-          по плану: – Ни в коем случае не заводите двигатель автомобиля; – Вызовите эвакуатор, на нем машину доставят в
-          сервис; – Опишите сотруднику проблему, не забудьте документы; Стоимость такой ошибки может быть разной, однако
-          правильные действия способны минимизировать ущерб.
+        <div class="zag">{{ lifeHack.title3?.title2 }}</div>
+        <div class="text">{{ lifeHack.title3?.subtitle2 }}
         </div>
       </div>
-      <div class='right'>
-        <img src='../../../assets/img/img18-1.jpg' alt=''>
+      <div class="right">
+        <img [src]="lifeHack.title3?.img" alt="">
       </div>
     </div>
     <!-- Конец статьи -->
   </div>
 </section>
-<section class='sec-5'>
-  <div class='wrapper'>
-    <div class='box'>
-      <div class='left'>
-        <div class='title'>Получай обновления <br>и новости раньше всех</div>
+<section class="sec-5">
+  <div class="wrapper">
+    <div class="box">
+      <div class="left">
+        <div class="title">Получай обновления <br>и новости раньше всех</div>
         <form>
-          <label for='mail'>e-mail:</label>
-          <input type='text' placeholder='my.mail@gmail.com' name='mail' id='mail'>
-          <button type='submit' class='btn'>подписаться</button>
+          <label for="mail">e-mail:</label>
+          <input type="text" placeholder="my.mail@gmail.com" name="mail" id="mail">
+          <button type="submit" class="btn">подписаться</button>
         </form>
       </div>
-      <div class='right'>
-        <a href='#'>
-          <img src='../../../assets/img/vk.svg' alt=''>
+      <div class="right">
+        <a href="#">
+          <img src="assets/img/vk.svg" alt="">
           <span>ВКонтакте</span>
         </a>
-        <a href='#'>
-          <img src='../../../assets/img/ya.svg' alt=''>
+        <a href="#">
+          <img src="assets/img/ya.svg" alt="">
           <span>Яндекс.Дзен</span>
         </a>
-        <a href='#'>
-          <img src='../../../assets/img/tg.svg' alt=''>
+        <a href="#">
+          <img src="assets/img/tg.svg" alt="">
           <span>Telegram</span>
         </a>
-        <a href='#'>
-          <img src='../../../assets/img/mail.svg' alt=''>
+        <a href="#">
+          <img src="assets/img/mail.svg" alt="">
           <span>Mail.ru</span>
         </a>
       </div>
@@ -129,3 +103,5 @@
   </div>
 </section>
 
+
+</body>

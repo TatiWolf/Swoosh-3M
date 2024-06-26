@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import {ILifeHacks, LifeHacksService} from "../../data/life-hacks.service";
-import {Subject} from "rxjs";
+import {BehaviorSubject, map, Observable, Subject} from "rxjs";
 import {IPerson} from "../../data/persons.service";
 import {Route, Router} from "@angular/router";
+import {IArticle} from "../../data/articles.service";
 
 @Component({
   selector: 'app-life-hacks',
@@ -14,12 +15,44 @@ constructor(
   private lifeHacksService:LifeHacksService,
   private route:Router
 ) {
+  this.filteredLifeHacks$ = this.lifeHacks.asObservable().pipe(
+    map(() => this.filterCarsByCountries())
+  );
 }
-  lifeHacks = this.lifeHacksService.lifeHacks
+
+  filteredLifeHacks$: Observable<ILifeHacks[]> = new Observable<ILifeHacks[]>();
+  lifeHacks:BehaviorSubject<ILifeHacks[]> = new BehaviorSubject<ILifeHacks[]>(this.lifeHacksService.lifeHacks)
+  categoriesActive: string[] = []
+
+  private filterCarsByCountries(): ILifeHacks[] {
+    if (this.categoriesActive.length === 0) {
+      return this.lifeHacksService.lifeHacks;
+    }
+    return this.lifeHacksService.lifeHacks.filter(car => this.categoriesActive.includes(car.type[0]));
+  }
+
+  addToArrayCategories(type: string) {
+    if (this.categoriesActive.includes(type)) {
+      this.categoriesActive = this.categoriesActive.filter(c => c !== type);
+    } else {
+      this.categoriesActive.push(type);
+    }
+    console.log(this.categoriesActive)
+    this.updateFilteredLifeHacks();
+  }
+
+  private updateFilteredLifeHacks() {
+    const filtered = this.filterCarsByCountries();
+    this.lifeHacks.next(filtered);
+  }
+
+
   categories = this.lifeHacksService.categories
 
   checkLifeHack(lifeHack: ILifeHacks) {
-    this.lifeHacksService.selectedLifeHack.next(lifeHack)
+    localStorage.setItem('lifeHack', JSON.stringify(lifeHack))
     this.route.navigate(['/template-for-life-hacks'])
   }
+
+
 }

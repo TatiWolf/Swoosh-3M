@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ILifeHacks, LifeHacksService} from "../../../data/life-hacks.service";
 import {Observable} from "rxjs";
 import {IArticle} from "../../../data/articles.service";
@@ -8,12 +8,13 @@ import {IArticle} from "../../../data/articles.service";
   templateUrl: './template-for-life-hacks.component.html',
   styleUrls: ['./template-for-life-hacks.component.scss']
 })
-export class TemplateForLifeHacksComponent {
-  constructor(
-    private lifeHack: LifeHacksService
-  ) {
+export class TemplateForLifeHacksComponent implements OnInit{
+  ngOnInit(): void {
+    this.lifeHack = JSON.parse(localStorage.getItem('lifeHack')!)
+    console.log(this.lifeHack)
   }
 
-  filteredLifeHacks$: Observable<ILifeHacks> = new Observable<ILifeHacks>();
-  lifeHackArticles = this.lifeHack.selectedLifeHack.asObservable()
+  lifeHack: ILifeHacks = {} as ILifeHacks;
+
+
 }

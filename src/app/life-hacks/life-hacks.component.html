@@ -1,5 +1,7 @@
+<body class="articles">
 <header>
   <div class="wrapper">
+
     <div class="banner">
       <div class="img">
         <img src="assets/img/img19.jpeg" alt="">
@@ -17,15 +19,15 @@
   <div class="wrapper">
     <div class="box">
       <label class="checkbox-filter" *ngFor="let category of categories">
-        <input type="checkbox" name="teg1" class="checkbox-input">
+        <input type="checkbox" name="teg1" class="checkbox-input" (click)="addToArrayCategories(category)">
         <span class="checkbox-content">{{category}}</span>
       </label>
     </div>
     <div class="box">
-      <div class="item" data-rubric1="teg2" *ngFor="let lifeHack of lifeHacks">
+      <div class="item pointer" data-rubric1="teg2" *ngFor="let lifeHack of filteredLifeHacks$ | async">
         <a (click)="checkLifeHack(lifeHack)">
           <span class="img">
-            <img [src]="lifeHack.img" alt="">
+            <img [src]="lifeHack.icon" alt="">
           </span>
           <span class="teg">
             <span *ngFor="let type of lifeHack.type">{{type}}</span>

@@ -12,6 +12,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import {NgOptimizedImage} from "@angular/common";
 import { TemplateForArticlesComponent } from './templates/template-for-articles/template-for-articles.component';
 import { TemplateForLifeHacksComponent } from './templates/template-for-life-hacks/template-for-life-hacks.component';
+import { TemplateForCarsComponent } from './templates/template-for-cars/template-for-cars.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TemplateForLifeHacksComponent } from './templates/template-for-life-hac
     PersonsComponent,
     ErrorPageComponent,
     TemplateForArticlesComponent,
-    TemplateForLifeHacksComponent
+    TemplateForLifeHacksComponent,
+    TemplateForCarsComponent
   ],
   imports: [
     BrowserModule,
