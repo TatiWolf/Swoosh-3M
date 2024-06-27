@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {BehaviorSubject, map, Observable, Subject} from "rxjs";
 import {IPerson, PersonsService} from "../../data/persons.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-persons',
@@ -9,7 +10,8 @@ import {IPerson, PersonsService} from "../../data/persons.service";
 })
 export class PersonsComponent {
   constructor(
-    private personsService:PersonsService
+    private personsService:PersonsService,
+    private router:Router
   ) {
     this.filteredPersons$ = this.person.asObservable().pipe(
       map(() => this.filterCarsByCountries())
@@ -50,6 +52,7 @@ export class PersonsComponent {
 
 
   checkPerson(person: IPerson) {
-    this.selectedPerson.next(person)
+    localStorage.setItem('person', JSON.stringify(person))
+    this.router.navigate(['/template-for-person'])
   }
 }

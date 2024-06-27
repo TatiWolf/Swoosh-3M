@@ -9,6 +9,7 @@ import {ErrorPageComponent} from "./error-page/error-page.component";
 import {TemplateForLifeHacksComponent} from "./templates/template-for-life-hacks/template-for-life-hacks.component";
 import {TemplateForArticlesComponent} from "./templates/template-for-articles/template-for-articles.component";
 import {TemplateForCarsComponent} from "./templates/template-for-cars/template-for-cars.component";
+import {TemplateForPersonComponent} from "./templates/template-for-person/template-for-person.component";
 
 const routes: Routes = [
   {
@@ -36,17 +37,21 @@ const routes: Routes = [
     component: ErrorPageComponent
   },
   {
-    path:'template-for-life-hacks',
+    path: 'template-for-life-hacks',
     component: TemplateForLifeHacksComponent
   },
   {
-    path:'template-for-articles',
+    path: 'template-for-articles',
     component: TemplateForArticlesComponent
   }
   ,
   {
-    path:'template-for-cars',
+    path: 'template-for-cars',
     component: TemplateForCarsComponent
+  },
+  {
+    path:'template-for-person',
+    component: TemplateForPersonComponent
   }
 ];
 

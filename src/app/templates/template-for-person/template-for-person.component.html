@@ -1,0 +1,134 @@
+<body class="article">
+<header>
+  <div class="wrapper">
+    <div class="box">
+    </div>
+    <div class="banner">
+      <div class="teg">
+        <a href="#" *ngFor="let type of person.type">{{ type }}</a>
+      </div>
+      <div class="img">
+        <img [src]="person.image" alt="">
+      </div>
+      <div class="box">
+        <div class="zag">{{ person.name }}</div>
+        <div class="text">
+          <p>{{ person.subtitle }}</p>
+          <a href="#">поделиться</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec-8">
+  <div class="wrapper">
+
+<div class="person-info">
+  <div class="person-info__box">
+    <h2 class="title">{{person.title1}}</h2>
+    <p class="paragraph">{{person.subtitle1}}</p>
+    <h2 class="title">{{person.title2}}</h2>
+    <p class="paragraph" *ngFor="let paragraph of person.subtitle2">{{paragraph}}</p>
+    <div>
+      <img [src]="person.image2" alt="">
+    </div>
+  </div>
+  <div class="person-info__box">
+    <div>
+      <img [src]="person.image1" alt="">
+    </div>
+    <h2 class="title mt40">{{person.title3}}</h2>
+    <p class="paragraph" *ngFor="let paragraph of person.subtitle3">{{paragraph}}</p>
+
+  </div>
+</div>
+  </div>
+</section>
+
+<!--<section class="sec-8">-->
+<!--  <div class="wrapper">-->
+<!--    &lt;!&ndash; Начало статьи &ndash;&gt;-->
+<!--    <div class="box">-->
+<!--      <div class="left" style="    height: fit-content;">-->
+<!--        <div class="title1" style="    font-size: 20px;-->
+<!--    font-weight: 600;-->
+<!--    line-height: 23.86px;-->
+<!--    text-align: left;-->
+<!--    color: #000;-->
+<!--    text-transform: uppercase;-->
+<!--    margin-bottom: 17px;-->
+<!--}">{{ car.block2?.title1 }}</div>-->
+<!--        <div class="" *ngFor="let text of car.block2?.subtitle1">{{ text }}</div>-->
+<!--      </div>-->
+<!--      <div class="right" style="    height: fit-content; border-radius: 0">-->
+<!--        <div class="title1" style="    font-size: 20px;-->
+<!--    font-weight: 600;-->
+<!--    line-height: 23.86px;-->
+<!--    text-align: left;-->
+<!--    color: #000;-->
+<!--    text-transform: uppercase;-->
+<!--    margin-bottom: 17px;-->
+<!--}">{{ car.block2?.title2 }}</div>-->
+<!--        <div class="">{{ car.block2?.subtitle2 }}</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<!--<section class="sec-8">-->
+<!--  <div class="wrapper">-->
+<!--    &lt;!&ndash; Начало статьи &ndash;&gt;-->
+<!--    <div class="box">-->
+<!--      <div class="left">-->
+<!--        <img [src]="car.block3?.image" alt="">-->
+<!--      </div>-->
+<!--      <div class="right">-->
+<!--        <div class="title">{{ car.block3?.title }}</div>-->
+
+<!--        <div class="text" style="margin-bottom: 20px;">{{ car.block3?.subtitle!.text1! }}-->
+<!--        </div>-->
+<!--        <div class="text"  *ngFor="let text of car.block3?.subtitle!.info!">{{text}}-->
+<!--        </div>-->
+<!--        <div class="text" style="margin-top: 20px;">{{ car.block3?.subtitle!.footer! }}-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<section class="sec-5">
+  <div class="wrapper">
+    <div class="box">
+      <div class="left">
+        <div class="title">Получай обновления <br>и новости раньше всех</div>
+        <form>
+          <label for="mail">e-mail:</label>
+          <input type="text" placeholder="my.mail@gmail.com" name="mail" id="mail">
+          <button type="submit" class="btn">подписаться</button>
+        </form>
+      </div>
+      <div class="right">
+        <a href="#">
+          <img src="assets/img/vk.svg" alt="">
+          <span>ВКонтакте</span>
+        </a>
+        <a href="#">
+          <img src="assets/img/ya.svg" alt="">
+          <span>Яндекс.Дзен</span>
+        </a>
+        <a href="#">
+          <img src="assets/img/tg.svg" alt="">
+          <span>Telegram</span>
+        </a>
+        <a href="#">
+          <img src="assets/img/mail.svg" alt="">
+          <span>Mail.ru</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</body>

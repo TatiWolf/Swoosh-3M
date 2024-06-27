@@ -24,7 +24,7 @@
       </label>
     </div>
     <div class="box">
-      <div class="item" data-rubric1="teg3" data-rubric2="teg2" data-rubric3="teg1" *ngFor="let person of filteredPersons$ | async">
+      <div class="item pointer" data-rubric1="teg3" data-rubric2="teg2" data-rubric3="teg1" *ngFor="let person of filteredPersons$ | async">
         <a (click)="checkPerson(person)">
           <span class="img">
             <img [ngSrc]="person.image" [alt]="person.name" fill>

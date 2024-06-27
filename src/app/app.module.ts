@@ -13,6 +13,7 @@ import {NgOptimizedImage} from "@angular/common";
 import { TemplateForArticlesComponent } from './templates/template-for-articles/template-for-articles.component';
 import { TemplateForLifeHacksComponent } from './templates/template-for-life-hacks/template-for-life-hacks.component';
 import { TemplateForCarsComponent } from './templates/template-for-cars/template-for-cars.component';
+import { TemplateForPersonComponent } from './templates/template-for-person/template-for-person.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TemplateForCarsComponent } from './templates/template-for-cars/template
     ErrorPageComponent,
     TemplateForArticlesComponent,
     TemplateForLifeHacksComponent,
-    TemplateForCarsComponent
+    TemplateForCarsComponent,
+    TemplateForPersonComponent
   ],
   imports: [
     BrowserModule,
