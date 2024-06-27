@@ -26,21 +26,25 @@ export class IndexComponent {
   person = this.personsService.persons[0]
   chooseArticle(article: IArticle) {
     localStorage.setItem('article', JSON.stringify(article))
+    window.scrollTo(0, -5000)
     this.router.navigate(['/template-for-articles'])
   }
 
   chooseLifeHack(lifeHack: ILifeHacks) {
     localStorage.setItem('lifeHack', JSON.stringify(lifeHack))
+    window.scrollTo(0, -5000)
     this.router.navigate(['/template-for-life-hacks'])
   }
 
   chooseCars(car: ICars) {
     localStorage.setItem('car', JSON.stringify(car))
+    window.scrollTo(0, -5000)
     this.router.navigate(['/template-for-cars'])
   }
 
   choosePerson(person: IPerson) {
     localStorage.setItem('person', JSON.stringify(person))
+    window.scrollTo(0, -5000)
     this.router.navigate(['/template-for-person'])
   }
 }

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import {ILifeHacks, LifeHacksService} from "../../data/life-hacks.service";
-import {BehaviorSubject, map, Observable, Subject} from "rxjs";
-import {IPerson} from "../../data/persons.service";
-import {Route, Router} from "@angular/router";
-import {IArticle} from "../../data/articles.service";
+import {BehaviorSubject, map, Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-life-hacks',
@@ -51,6 +49,7 @@ constructor(
 
   checkLifeHack(lifeHack: ILifeHacks) {
     localStorage.setItem('lifeHack', JSON.stringify(lifeHack))
+    window.scrollTo(0, -5000)
     this.route.navigate(['/template-for-life-hacks'])
   }
 

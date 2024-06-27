@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {CarsService, ICars} from "../../data/cars.service";
-import {BehaviorSubject, filter, map, Observable} from "rxjs";
+import {BehaviorSubject, map, Observable} from "rxjs";
 import {Router} from "@angular/router";
 
 
@@ -46,6 +46,7 @@ export class ReviewsComponent {
 
   selectCar(car: ICars) {
     localStorage.setItem('car', JSON.stringify(car))
+    window.scrollTo(0, -5000)
     this.route.navigate(['/template-for-cars'])
   }
 }

@@ -26,6 +26,7 @@ export class ArticlesComponent {
 
   checkArticle(article: IArticle) {
     localStorage.setItem('article', JSON.stringify(article))
+    window.scrollTo(0, -5000)
     this.route.navigate(['/template-for-articles'])
   }
 

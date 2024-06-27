@@ -53,6 +53,7 @@ export class PersonsComponent {
 
   checkPerson(person: IPerson) {
     localStorage.setItem('person', JSON.stringify(person))
+    window.scrollTo(0, -5000)
     this.router.navigate(['/template-for-person'])
   }
 }
