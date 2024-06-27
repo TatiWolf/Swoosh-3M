@@ -25,7 +25,7 @@
       </label>
     </div>
     <div class="box content-wrapper">
-      <div class="item pointer" data-rubric1="teg4" routerLink="/template-for-articles" data-rubric2="teg6" *ngFor="let article of filteredArticles$ | async">
+      <div class="item pointer" data-rubric1="teg4"  data-rubric2="teg6" *ngFor="let article of filteredArticles$ | async">
         <a (click)="checkArticle(article)">
           <span class="img">
             <img [ngSrc]="article.image" alt="" fill>

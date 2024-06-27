@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ArticlesService, IArticle} from "../../data/articles.service";
 import {BehaviorSubject, map, Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-articles',
@@ -9,7 +10,8 @@ import {BehaviorSubject, map, Observable} from "rxjs";
 })
 export class ArticlesComponent {
   constructor(
-    public articlesService: ArticlesService
+    public articlesService: ArticlesService,
+    private route: Router
   ) {
     this.filteredArticles$ = this.articles.asObservable().pipe(
       map(() => this.filterCarsByCountries())
@@ -24,6 +26,7 @@ export class ArticlesComponent {
 
   checkArticle(article: IArticle) {
     localStorage.setItem('article', JSON.stringify(article))
+    this.route.navigate(['/template-for-articles'])
   }
 
 

@@ -23,38 +23,21 @@
       </div>
     </div>
     <div class="box">
-      <div class="item">
-        <a routerLink="">
+      <div class="item pointer" *ngFor="let article of articles">
+        <a (click)="chooseArticle(article)">
                         <span class="img">
-                            <img src="assets/img/img1.jpg" alt="">
+                            <img [src]="article.image" alt="">
                         </span>
           <span class="teg">
-                            <span>Безопасность</span>
-                            <span>ДТП</span>
-                            <span>Статьи</span>
+                            <span *ngFor="let type of article.type">{{ type }}</span>
                         </span>
           <span class="content">
-                            <span class="zag">Что делать при ДТП?</span>
-                            <span class="text">Как правильно оформить ДТП, кого и как вызывать расскажем в статье</span>
+                            <span class="zag">{{ article.title }}</span>
+                            <span class="text">{{ article.description }}</span>
                         </span>
         </a>
       </div>
-      <div class="item">
-        <a routerLink="articles">
-                        <span class="img">
-                            <img src="assets/img/img2.jpg" alt="">
-                        </span>
-          <span class="teg">
-                            <span>SOS</span>
-                            <span>Авто</span>
-                            <span>Статьи</span>
-                        </span>
-          <span class="content">
-                            <span class="zag">заправился не тем топливом</span>
-                            <span class="text">Какие действия предпринять, чтобы спасти машину и кошелек</span>
-                        </span>
-        </a>
-      </div>
+
     </div>
   </div>
 </section>
@@ -67,63 +50,18 @@
       </div>
     </div>
     <div class="box">
-      <div class="item">
-        <a routerLink="error-page">
+      <div class="item pointer" *ngFor="let lifeHack of lifeHacks">
+        <a (click)="chooseLifeHack(lifeHack)" >
                         <span class="img">
-                            <img src="assets/img/img3.png" alt="">
+                            <img [src]="lifeHack.icon" alt="">
                         </span>
           <span class="teg">
-                            <span>Авто</span>
-                            <span>Лайфхаки</span>
+                            <span *ngFor="let type of lifeHack.type">{{ type }}</span>
+                            <span >Лайфхаки</span>
                         </span>
           <span class="content">
-                            <span class="zag">тук-тук, хозяин!</span>
-                            <span class="text">Советы, которые помогут двигателю прожить долго</span>
-                        </span>
-        </a>
-      </div>
-      <div class="item">
-        <a routerLink="error-page">
-                        <span class="img">
-                            <img src="assets/img/img4.png" alt="">
-                        </span>
-          <span class="teg">
-                            <span>Зима</span>
-                            <span>Лайфхаки</span>
-                        </span>
-          <span class="content">
-                            <span class="zag">примерзли дворники</span>
-                            <span class="text">Не спешите применять грубую силу, есть выход</span>
-                        </span>
-        </a>
-      </div>
-      <div class="item">
-        <a routerLink="error-page">
-                        <span class="img">
-                            <img src="assets/img/img5.png" alt="">
-                        </span>
-          <span class="teg">
-                            <span>Авто</span>
-                            <span>Лайфхаки</span>
-                        </span>
-          <span class="content">
-                            <span class="zag">Запотели стекла</span>
-                            <span class="text">Как избавиться от самой частой проблемы в авто</span>
-                        </span>
-        </a>
-      </div>
-      <div class="item">
-        <a routerLink="error-page">
-                        <span class="img">
-                            <img src="assets/img/img6.png" alt="">
-                        </span>
-          <span class="teg">
-                            <span>Мойка</span>
-                            <span>Лайфхаки</span>
-                        </span>
-          <span class="content">
-                            <span class="zag">Спасибо, достаточно</span>
-                            <span class="text">Какие услуги вам могут попытаться навязать</span>
+                            <span class="zag">{{ lifeHack.title }}</span>
+                            <span class="text">{{ lifeHack.description }}</span>
                         </span>
         </a>
       </div>
@@ -139,70 +77,23 @@
       </div>
     </div>
     <div class="box">
-      <div class="item">
-        <a routerLink="error-page">
+      <div class="item pointer" *ngFor="let car of cars">
+        <a (click)="chooseCars(car)">
                         <span class="img">
-                            <img src="assets/img/img7.jpg" alt="">
+                            <img [src]="car.image" alt="">
                         </span>
           <span class="teg">
-                            <span>Новинки</span>
-                            <span>Китай</span>
-                            <span>Обзор</span>
+                            <span >{{ car.country }}</span>
+                            <span >{{ car.type }}</span>
+
                         </span>
           <span class="content">
-                            <span class="zag">Geely Monjaro</span>
-                            <span class="text">кроссовер из китая</span>
+                            <span class="zag">{{ car.name }}</span>
+                            <span class="text">{{ car.description }}</span>
                         </span>
         </a>
       </div>
-      <div class="item">
-        <a routerLink="error-page">
-                        <span class="img">
-                            <img src="assets/img/img8.jpg" alt="">
-                        </span>
-          <span class="teg">
-                            <span>Классика</span>
-                            <span>Германия</span>
-                            <span>Обзор</span>
-                        </span>
-          <span class="content">
-                            <span class="zag">Toyota RAV4</span>
-                            <span class="text">2013-2019</span>
-                        </span>
-        </a>
-      </div>
-      <div class="item">
-        <a routerLink="error-page">
-                        <span class="img">
-                            <img src="assets/img/img9.jpg" alt="">
-                        </span>
-          <span class="teg">
-                            <span>Классика</span>
-                            <span>Корея</span>
-                            <span>Обзор</span>
-                        </span>
-          <span class="content">
-                            <span class="zag">Hyundai Solaris</span>
-                            <span class="text">знакомый седан</span>
-                        </span>
-        </a>
-      </div>
-      <div class="item">
-        <a routerLink="error-page">
-                        <span class="img">
-                            <img src="assets/img/img10.jpg" alt="">
-                        </span>
-          <span class="teg">
-                            <span>Новинки</span>
-                            <span>Швеция</span>
-                            <span>Обзор</span>
-                        </span>
-          <span class="content">
-                            <span class="zag">Volvo XC90</span>
-                            <span class="text">гибридный кроссовер</span>
-                        </span>
-        </a>
-      </div>
+
     </div>
   </div>
 </section>
@@ -214,19 +105,18 @@
         <a routerLink="persons">смотреть все</a>
       </div>
     </div>
-    <div class="item">
-      <a routerLink="error-page">
+    <div class="item pointer" >
+      <a (click)="choosePerson(person)">
                     <span class="img">
-                        <img src="assets/img/img11.png" alt="">
+                        <img [src]="person.image" alt="">
                     </span>
         <span class="teg">
-                        <span>Гонки</span>
-                        <span>Ралли</span>
+                        <span *ngFor="let type of person.type">{{ type }}</span>
                         <span>Личности</span>
                     </span>
         <span class="content">
-                        <span class="zag">Мишель Мутон</span>
-                        <span class="text">Самая быстрая женщина в мире</span>
+                        <span class="zag">{{ person.name }}</span>
+                        <span class="text">{{person.description}}</span>
                     </span>
       </a>
     </div>
