@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {ArticlesService, IArticle} from "../../data/articles.service";
-import {BehaviorSubject, elementAt, map, Observable, Subject} from "rxjs";
-import {ICars} from "../../data/cars.service";
+import {BehaviorSubject, map, Observable} from "rxjs";
 
 @Component({
   selector: 'app-articles',
@@ -27,17 +26,15 @@ export class ArticlesComponent {
     localStorage.setItem('article', JSON.stringify(article))
   }
 
+
+
   private filterCarsByCountries(): IArticle[] {
     if (this.categoriesActive.length === 0) {
       return this.articlesService.articles;
     }
-    return this.articlesService.articles.filter(article => {
-      article.type.map(value => {
-      this.categoriesActive.includes(value)
-        console.log(this.categoriesActive)
-        console.log(value)
-      })
-    });
+    return this.articlesService.articles.filter(person =>
+      person.type.some(type => this.categoriesActive.includes(type))
+    );
   }
 
   addToArrayCategories(country: string) {

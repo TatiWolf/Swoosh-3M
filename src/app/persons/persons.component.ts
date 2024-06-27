@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import {BehaviorSubject, map, Observable, Subject} from "rxjs";
-import {IArticle} from "../../data/articles.service";
 import {IPerson, PersonsService} from "../../data/persons.service";
-import {CarsService, ICars} from "../../data/cars.service";
 
 @Component({
   selector: 'app-persons',
@@ -30,7 +28,9 @@ export class PersonsComponent {
     if (this.categoriesActive.length === 0) {
       return this.personsService.persons;
     }
-    return this.personsService.persons.filter(car => this.categoriesActive.includes(car.type[0])); //TODO: ИСПРАВИТЬ!!!!
+    return this.personsService.persons.filter(person =>
+      person.type.some(type => this.categoriesActive.includes(type))
+    );
   }
 
   addToArrayCategories(country: string) {
