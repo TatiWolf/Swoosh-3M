@@ -70,7 +70,7 @@ header{
 }
 header .box{
   align-items: center;
-  margin-bottom: 55px;
+  //margin-bottom: 55px;
 }
 header .box .logo{
   width: 188px;
@@ -2104,4 +2104,23 @@ header .banner .teg a:hover{
 }
 .pointer {
   cursor: pointer;
+}
+
+.text-logo {
+  display: flex;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.logo-footer {
+max-width: 180px;
+}
+
+.logo-paragraph {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 144px;
 }
