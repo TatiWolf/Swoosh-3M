@@ -112,6 +112,7 @@ export class CarsService {
     },
     {
       "image": "assets/img/img8.jpg",
+      imageTitle: 'assets/img/cars/ToyotaRAV4.jpeg',
       "type": "Классика",
       "country": "Япония",
       "name": "Toyota RAV4",
@@ -160,6 +161,7 @@ export class CarsService {
     },
     {
       "image": "assets/img/img9.jpg",
+      imageTitle: 'assets/img/cars/HyundaiSolaris.jpeg',
       "type": "Классика",
       "country": "Другие страны",
       "name": "Hyundai Solaris",
@@ -208,6 +210,7 @@ export class CarsService {
     },
     {
       "image": "assets/img/img10.jpg",
+      imageTitle: 'assets/img/cars/VolvoXC90.webp',
       "type": "Новинки",
       "country": "Другие страны",
       "name": "Volvo XC90",
@@ -261,6 +264,7 @@ export class CarsService {
     {
       "image": "assets/img/img25.jpeg",
       "type": "Легенды",
+      imageTitle: 'assets/img/cars/Mercedes-BenzW124.jpeg',
       "country": "Германия",
       "name": "Mercedes-Benz W124",
       "description": "мечта и легенда 90-х",
@@ -311,6 +315,7 @@ export class CarsService {
     {
       "image": "assets/img/img26.jpeg",
       "type": "Классика",
+      imageTitle: 'assets/img/cars/ToyotaCamry.png',
       "country": "Япония",
       "name": "Toyota Camry",
       "description": "нестареющая классика",

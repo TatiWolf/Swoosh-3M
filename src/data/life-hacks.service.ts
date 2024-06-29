@@ -42,7 +42,7 @@ export class LifeHacksService {
       icon: 'assets/img/img3.png',
       image: 'assets/img/life-hacks/img1.jpg',
       type: ['Обслуживание'],
-      title: 'тук-тук, хозяин!',
+      title: 'Тук-тук, хозяин!',
       description: 'Советы, которые помогут двигателю прожить долго',
       important: [
         {
@@ -76,7 +76,7 @@ export class LifeHacksService {
       icon: 'assets/img/img4.png',
       image: 'assets/img/life-hacks/img3.jpg',
       type: ['Зима'],
-      title: 'примерзли дворники',
+      title: 'Примерзли дворники',
       description: 'Не спешите применять грубую силу, есть выход',
       important: [
         {
@@ -172,7 +172,7 @@ export class LifeHacksService {
       icon: 'assets/img/img20.png',
       image: 'assets/img/life-hacks/img9.jpg',
       type: ['Зима'],
-      title: 'внимание: сугробы',
+      title: 'Внимание: сугробы',
       description: 'Лайфхаки, которые помогут выбрать из снежного плена',
       important: [
         {
@@ -236,7 +236,7 @@ export class LifeHacksService {
       icon: 'assets/img/img22.png',
       image: 'assets/img/life-hacks/img13.jpg',
       type: ['Путешествия'],
-      title: 'хранение в авто',
+      title: 'Хранение в авто',
       description: 'Лайфхаки, которые помогут взять с собой все чемоданы',
       important: [
         {
